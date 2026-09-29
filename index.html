@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Sémio S5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidenav" aria-label="Navigation">
+    <a class="brand" href="#accueil"><span class="mark" aria-hidden="true"><i></i><i></i></span><span>Sémio S5</span></a>
+    <p class="side-count" data-countdown></p>
+    <nav class="side-links">
+      <a href="#accueil" data-nav="accueil">Accueil</a>
+      <span class="side-group">S'entraîner</span>
+      <a href="#sujets" data-nav="sujets">Sujets d'exam</a>
+      <a href="#examen" data-nav="examen">Examen blanc</a>
+      <a href="#cartes" data-nav="cartes">Flashcards</a>
+      <a href="#quiz" data-nav="quiz">Quiz</a>
+      <a href="#paires" data-nav="paires">Auteurs et notions</a>
+      <span class="side-group">Apprendre</span>
+      <a href="#fiches" data-nav="fiches">Fiches de cours</a>
+      <a href="#reperes" data-nav="reperes">Repères chronologiques</a>
+      <a href="#exo-ia" data-nav="exo-ia">Exercice IA</a>
+    </nav>
+    <p class="side-foot">SIC S5, approche sémiologique<br>Cours de Ralitza Bonéva</p>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <a class="brand" href="#accueil"><span class="mark" aria-hidden="true"><i></i><i></i></span><span>Sémio S5</span></a>
+      <span class="pill-count" data-countdown></span>
+    </header>
+    <main id="view" tabindex="-1"></main>
+  </div>
+</div>
+
+<nav class="tabbar" aria-label="Navigation principale">
+  <a href="#accueil" data-nav="accueil">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-5v-5H9v5H4z"/></svg><span>Accueil</span></a>
+  <a href="#sujets" data-nav="sujets">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5h9l3.5 3.5v13.5H6zM9 11h7M9 14.5h7M9 18h4"/></svg><span>Sujets</span></a>
+  <a href="#cartes" data-nav="cartes">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 8h12v11.5h-12zM8 4.5h11.5V16"/></svg><span>Cartes</span></a>
+  <a href="#fiches" data-nav="fiches">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 4 5v14c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V5c-3-.5-6 0-8 1.5zM12 6.5v14"/></svg><span>Fiches</span></a>
+  <a href="#plus" data-nav="plus">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h.01M12 12h.01M19 12h.01"/></svg><span>Plus</span></a>
+</nav>
+
+<script src="data/semiotique.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
