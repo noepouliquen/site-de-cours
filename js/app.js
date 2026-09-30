@@ -50,6 +50,8 @@
   const SUJ = {};
   SUJETS.forEach((s) => { SUJ[s.id] = s; });
   const OFFICIELS = SUJETS.filter((s) => s.officiel);
+  const PARTS_SUJETS = D.parties.map((p) => p.id).filter((id) => OFFICIELS.some((s) => s.partie === id));
+  const PART_FILTERS = [["all", "Toutes"]].concat(D.parties.map((p) => [p.id, partLabel(p.id)]));
   const numSujet = (s) => (s.officiel ? String(SUJETS.filter((x) => x.partie === s.partie && x.officiel).indexOf(s) + 1) : "B" + (SUJETS.filter((x) => !x.officiel).indexOf(s) + 1));
 
   /* ---------------- Dates ---------------- */
@@ -143,11 +145,12 @@
         '<a href="#cartes">Revoir les cartes ratées</a>',
         '<a href="#exo-ia">Boucler l\'exercice IA</a> (à rendre le 01/10)'] },
       { off: 0, label: "Jour J", date: "jeu. 01/10", items: [
-        '<a href="#cartes">Flash-révision</a> des cartes à revoir',
-        'Relire les checklists des <a href="#sujets">sujets les moins bien couverts</a>',
-        'Un dernier coup d\'œil aux <a href="#reperes">repères auteurs-dates</a>'] }
+        'Nouveau : lire les fiches <a href="#fiches-p4">IV (communication verbale)</a> et <a href="#fiches-p5">V (médias, IA)</a>',
+        '<a href="#sujets">Les 9 sujets de la partie IV</a> : au moins le plan de chacun',
+        '<a href="#exo-ia">Finir l\'exercice IA</a> avant 14h',
+        '<a href="#cartes">Flash-révision</a> des cartes à revoir'] }
     ];
-    const rows = ["p1", "p2", "p3", "intro"].map((pid) => {
+    const rows = D.parties.filter((p) => p.id !== "intro").concat(P.intro).map((p) => p.id).map((pid) => {
       const secs = D.fiches[pid] || [];
       const read = secs.filter((_, i) => S.fiches[`${pid}-${i}`]).length;
       const cards = CARDS.filter((c) => c.partie === pid);
@@ -178,7 +181,7 @@
       <section class="quick" aria-label="Actions rapides">
         <a class="primary" href="#cartes"><strong>Réviser les cartes</strong><span>${plural(due, "carte à revoir", "cartes à revoir")} maintenant</span></a>
         <a href="#sujet-${esc(shuffle(OFFICIELS)[0].id)}"><strong>Sujet au hasard</strong><span>${done}/${OFFICIELS.length} sujets officiels déjà travaillés</span></a>
-        <a href="#examen"><strong>Examen blanc</strong><span>3 sujets tirés au sort, 1h30</span></a>
+        <a href="#examen"><strong>Examen blanc</strong><span>3 sujets de 3 parties différentes, 1h30</span></a>
       </section>
 
       <section class="stack">
@@ -228,7 +231,7 @@
         <p class="lead">Les ${OFFICIELS.length} sujets de contrôle donnés à la fin de chaque partie du cours. Rédige, puis compare avec le corrigé et coche ce que tu as mis : le pourcentage indique ta couverture des points clés.</p>
       </header>
       <div class="row"><a class="btn" href="#examen">Examen blanc (3 sujets, 1h30)</a><a class="btn btn-quiet" href="#sujet-${shuffle(OFFICIELS)[0].id}">Sujet au hasard</a></div>
-      ${["p1", "p2", "p3"].map((pid) => group(pid, SUJETS.filter((s) => s.partie === pid), `${partLabel(pid)} · ${esc(P[pid].titre)}`)).join("")}
+      ${PARTS_SUJETS.map((pid) => group(pid, SUJETS.filter((s) => s.partie === pid && s.officiel), `${partLabel(pid)} · ${esc(P[pid].titre)}`)).join("")}
       ${group("intro", SUJETS.filter((s) => !s.officiel), "Sujets transversaux (bonus)")}
     `;
   }
@@ -290,7 +293,7 @@
   /* EXAMEN BLANC                                                      */
   /* ================================================================ */
   function drawExam() {
-    const ids = ["p1", "p2", "p3"].map((pid) => shuffle(OFFICIELS.filter((s) => s.partie === pid))[0].id);
+    const ids = shuffle(PARTS_SUJETS).slice(0, 3).sort().map((pid) => shuffle(OFFICIELS.filter((s) => s.partie === pid))[0].id);
     S.exam = { ids, texts: {}, corrige: false };
     delete S.timers.examen;
     persist("exam"); persist("timers");
@@ -301,7 +304,7 @@
         <header class="page-head">
           <p class="eyebrow">Conditions réelles</p>
           <h1>Examen blanc</h1>
-          <p class="lead">3 sujets officiels tirés au sort, un par partie, et 1h30 pour les développer. Le cours ne dit pas comment les sujets seront répartis : le « un par partie » est un choix du site pour couvrir tout le programme.</p>
+          <p class="lead">3 sujets officiels tirés au sort dans 3 parties différentes, et 1h30 pour les développer. Le cours ne dit pas comment les sujets seront répartis : piocher dans 3 parties différentes est un choix du site pour couvrir le programme.</p>
           ${src("3:2")}
         </header>
         <div class="row"><button class="btn" data-act="exam-draw">Tirer 3 sujets</button></div>`;
@@ -361,7 +364,7 @@
   }
   function viewCards() {
     if (!CS.built) buildQueue(false);
-    const filters = [["all", "Toutes"], ["intro", "Intro"], ["p1", "Partie I"], ["p2", "Partie II"], ["p3", "Partie III"]];
+    const filters = PART_FILTERS;
     view.innerHTML = `
       <header class="page-head">
         <p class="eyebrow">Répétition espacée</p>
@@ -468,7 +471,7 @@
   /* ================================================================ */
   const QS = { filtre: "all", phase: "setup", list: [], i: 0, answered: null, good: 0, missed: [] };
   function viewQuiz() {
-    const filters = [["all", "Tout le cours"], ["intro", "Intro"], ["p1", "Partie I"], ["p2", "Partie II"], ["p3", "Partie III"]];
+    const filters = [["all", "Tout le cours"]].concat(PART_FILTERS.slice(1)).filter(([k]) => k === "all" || D.quiz.some((q) => q[0] === k));
     if (QS.phase === "setup") {
       view.innerHTML = `
         <header class="page-head">
@@ -547,6 +550,7 @@
   /* ================================================================ */
   /* REPÈRES                                                           */
   /* ================================================================ */
+  const yearKey = (y) => { const m = y.match(/\d+/); const n = m ? +m[0] : 0; return n < 100 ? 1900 + n : n; }; // « années 50 » → 1950
   function viewReperes() {
     view.innerHTML = `
       <header class="page-head">
@@ -555,7 +559,7 @@
         <p class="lead">Les dates que le cours donne, dans l'ordre. Placer une date juste derrière un nom d'auteur montre que tu maîtrises.</p>
       </header>
       <ol class="timeline">
-        ${D.reperes.map((r) => `<li><span class="yr">${esc(r[0])}</span><div><span class="who">${esc(r[1])}</span><p>${fmt(r[2])}</p>${src(r[3])}</div></li>`).join("")}
+        ${D.reperes.slice().sort((a, b) => yearKey(a[0]) - yearKey(b[0])).map((r) => `<li><span class="yr">${esc(r[0])}</span><div><span class="who">${esc(r[1])}</span><p>${fmt(r[2])}</p>${src(r[3])}</div></li>`).join("")}
       </ol>`;
   }
 
@@ -575,7 +579,13 @@
         <blockquote class="consigne">${fmt(X.consigne)}${src(X.consigneSrc)}</blockquote>
       </section>
       <section class="stack">
-        <h2>Méthode</h2>
+        <h2>Ce que dit le cours sur l'IA</h2>
+        <p class="lead">C'est la base de ta réponse à « qu'est-ce qui différencie l'IA d'un moteur de recherche ? ». Chaque point est à illustrer avec une phrase de ta conversation.</p>
+        <article class="fiche pc-ocre"><ul>${D.fiches.p5[1].points.map((p) => `<li>${fmt(p[0])}${src(p[1])}</li>`).join("")}</ul></article>
+      </section>
+      <section class="stack">
+        <h2>Méthode, environ 2h30 à 3h</h2>
+        <p class="lead">Durées estimées par ton assistant, à ajuster à ton rythme. Le cours ne précise ni la longueur ni la forme du rendu : vérifie-les avec ta promo.</p>
         <ol class="steps">${X.etapes.map((e) => `<li>${fmt(e)}</li>`).join("")}</ol>
       </section>
       <section class="stack">
@@ -593,7 +603,7 @@
       </section>
       <section class="stack">
         <h2>Pistes d'analyse</h2>
-        <p class="lead">Ces rapprochements sont proposés par ton assistant à partir des notions du cours. Ils ne sont pas dans le cours tel quel : garde-les seulement si ta conversation les confirme.</p>
+        <p class="lead">Le premier point vient directement du cours 5. Les autres sont des rapprochements proposés par ton assistant entre notions du cours : garde-les seulement si ta conversation les confirme.</p>
         ${X.pistes.map((p) => `<div class="piste">${fmt(p.texte)}${src(p.src)}</div>`).join("")}
       </section>`;
   }

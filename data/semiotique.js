@@ -26,7 +26,9 @@ window.MATIERES.semiotique = {
     { id: "intro", num: "Intro", titre: "Qu'est-ce que la communication ?", cours: "Cours 1, diapos 1-12", couleur: "slate" },
     { id: "p1", num: "I", titre: "Bases biologiques de la communication non verbale", cours: "Cours 1, diapos 13-38", couleur: "rouge" },
     { id: "p2", num: "II", titre: "La communication chez certaines espèces vivantes", cours: "Cours 2", couleur: "teal" },
-    { id: "p3", num: "III", titre: "La communication non verbale chez les humains", cours: "Cours 3", couleur: "plum" }
+    { id: "p3", num: "III", titre: "La communication non verbale chez les humains", cours: "Cours 3", couleur: "plum" },
+    { id: "p4", num: "IV", titre: "La communication verbale", cours: "Cours 4", couleur: "bleu" },
+    { id: "p5", num: "V", titre: "La communication multimodale (médias, IA)", cours: "Cours 5", couleur: "ocre" }
   ],
 
   /* ------------------------------------------------------------------ */
@@ -275,6 +277,109 @@ window.MATIERES.semiotique = {
         ["Mimiques, regards, gestes, posture, distance, orientation : le corps est **producteur de signaux** et **surface où ils se manifestent**.", "3:50"],
         ["Le corps produit du sens **au-delà des intentions** : communication involontaire.", "3:50"],
         ["Les signaux du corps ont des **degrés de conscience et d'intentionnalité variables** et sont **multicanaux** : le corps produit des **indices** (symptômes), des **signaux**, des **symboles** ou des signes.", "3:50"]
+      ]}
+    ],
+
+    p4: [
+      { titre: "1. Le schéma de Shannon et Weaver (1949)", points: [
+        ["**Claude Shannon et Warren Weaver**, *Théorie mathématique de la communication* (**1949**).", "4:2"],
+        ["Le message peut être en mots écrits ou parlés, en images, en musique. **L'émetteur transforme le message en signal**, envoyé par le **canal** jusqu'au **récepteur**.", "4:3"],
+        ["Exemples : au **téléphone**, l'émetteur transforme la pression du son vocal en courant électrique variable (le signal), qui parcourt un fil métallique (le canal). En **télégraphie**, l'émetteur encode des mots en séquences de courant (points, traits, blancs).", "4:3"],
+        ["Pour le **langage parlé** : la source est le **cerveau** de X, l'émetteur son **organe vocal**, le signal la pression sonore, le canal **l'air**, le récepteur **l'oreille** de Y (un « émetteur inversé »), la destination le cerveau de Y (Bougnoux, 1993).", "4:4"],
+        ["La réflexion porte sur **la transmission d'un signal**, pas sur le contenu ni la signification. Le schéma réduit la communication orale à un transfert d'ondes sonores.", "4:4"],
+        ["Le **bruit** : les altérations qui s'ajoutent au signal (distorsions du son ou de l'image, erreurs de transmission). Pour Shannon et Weaver, il faut **éliminer le bruit** pour améliorer le signal.", "4:5"],
+        ["**Information ≠ signification.** Un choix binaire = une unité d'information, un **bit** (*binary digit*). Deviner une carte parmi 32 : chaque question élimine la moitié des possibilités, il faut **5 bits**.", "4:5"]
+      ]},
+      { titre: "2. Le schéma de Jakobson : 6 facteurs, 6 fonctions", points: [
+        ["Avec **Roman Jakobson** (1963), **le message a une signification**. Il introduit les notions de **fonction du langage**, de **destinateur** et de **destinataire**.", "4:6"],
+        ["**6 facteurs** : le destinateur envoie un message au destinataire ; le message requiert un **contexte** (le « référent »), un **code** commun en tout ou en partie, et un **contact**, c'est-à-dire un canal physique **et une connexion psychologique** (Jakobson, 1963).", "4:6"],
+        ["**6 fonctions** : destinateur → **émotive** (expressive) ; destinataire → **conative** ; message → **poétique** ; contexte → **référentielle** ; contact → **phatique** ; code → **métalinguistique**.", "4:7-8"],
+        ["Les 6 fonctions sont **solidaires**, mais l'une peut dominer. Dès l'Antiquité : *docere* (informer), *movere* (émouvoir), *placere* (plaire). **Karl Bühler** (1936) : représentation, appel, expression.", "4:9"]
+      ]},
+      { titre: "Les 6 fonctions en détail", points: [
+        ["**Émotive / expressive** (destinateur) : il communique ses impressions, émotions, jugements (« J'ai faim », « Je suis triste »). La couche purement émotive : les **interjections** (« Zut ! »), à la forme phonique inhabituelle, qui résument un énoncé.", "4:10"],
+        ["**Conative** (destinataire) : attirer son attention pour qu'il se sente **concerné** (la « cible » en publicité, le lectorat, le public ; la propagande). Marques : **impératif, vocatif, interpellation**.", "4:11"],
+        ["Conatif **direct** : « va ouvrir la porte ». Conatif **indirect** : « on sonne » (le destinataire doit faire une inférence). Exemples d'affiches du cours : interpeller « les jeunes », propagande, humour, responsabiliser.", "4:11-18"],
+        ["**Poétique** (message) : l'énoncé joue avec **sa forme** (ordre des mots, sonorités, point de vue). Elle n'est pas limitée à la poésie : elle y est **dominante**, ailleurs **subsidiaire**.", "4:19"],
+        ["**Référentielle / dénotative** (contexte) : ce dont on parle (« Il pleut »). Prédominante mais **jamais seule**. Strictement référentiels : « route barrée », télégrammes, étiquettes. « On en dit toujours plus que ce qu'on voulait dire. »", "4:21"],
+        ["**Phatique** (contact) : **maintenir le contact** (« hein », « n'est-ce pas », « tu vois », « Allô, André ? »). Elle précède le langage articulé (gazouillis du nouveau-né). **Tous les comportements de politesse** (salutations, remerciements) en relèvent.", "4:23-24"],
+        ["**Malinowski** (1923) : questions sur la santé, remarques sur le temps… ne servent pas à informer, elles remplissent **une fonction sociale**.", "4:24"],
+        ["**Métalinguistique** (code) : utiliser le même code (ex. les feux de circulation) et **prendre le langage comme objet** (« le mot *lit* a trois lettres »). Corriger « le livre *que* je t'ai parlé » en « *dont* » : activité métalinguistique **sans** métalangage ; expliquer la règle du pronom relatif : **avec** métalangage.", "4:25-26"],
+        ["Il faut la même langue **et des champs culturels qui coïncident au moins en partie**.", "4:26"]
+      ]},
+      { titre: "Dénotation, connotation, métalangage ; réception et compréhension", points: [
+        ["**Barthes (1967)**, trois ordres du langage : **dénotation** (« nuit » = obscurité), **connotation** (« la nuit des temps » = le chaos, une époque ancienne), **métalangage** (« *nuit* est la racine de *nuitée* »).", "4:26-28"],
+        ["**Recevoir un message n'est pas le comprendre** : les champs culturels ne se recouvrent jamais totalement, d'où l'échec (aphasie de Wernicke) ou la nécessité de traduire.", "4:29-30"],
+        ["Seule la **langue naturelle a le pouvoir d'interpréter** (Benveniste) : elle peut parler d'elle-même et de tous les autres langages.", "4:30"],
+        ["**Décodage** = opération mécanique, exécutée par un appareil. **Interprétation** = opération subjective et culturelle.", "4:31"],
+        ["**Défauts de Jakobson** : il ignore les facteurs extra-linguistiques (PMG), psychologiques et culturels ; il imagine un « **tête-à-tête idéal** » et transparent.", "4:31"]
+      ]},
+      { titre: "3. Kerbrat-Orecchioni (1980) : les compétences", points: [
+        ["**Catherine Kerbrat-Orecchioni** (1980) décrit l'échange en termes de **compétences** : la langue n'est pas maîtrisée également par tous, l'échange n'est **ni harmonieux ni limpide**.", "4:32"],
+        ["Au lieu d'un code identique : **deux idiolectes partiellement communs**. Elle prend en compte la **dissymétrie** entre production et reconnaissance, et place au centre les « **ratés** » (dont l'impolitesse). « La compréhension est un cas particulier du malentendu » (**Culioli**).", "4:32"],
+        ["Elle distingue le **référent** de la **situation** (contraintes de l'« univers du discours ») et les **modèles de production** et **d'interprétation**. Exemple : « L'ordre sera maintenu coûte que coûte » (ministre) = **promesse** aux bons citoyens + **menace** aux fauteurs de troubles.", "4:34"],
+        ["**Compétences linguistiques** : phonétiques (enrhumé, accent), syntaxiques (construire des phrases), sémantiques (cohérence, sinon « coq-à-l'âne »), paralinguistiques (prosodie : « tu ne sors pas ce soir ! » / « ? »).", "4:36"],
+        ["**Compétences idéologiques et culturelles** (connaissances, valeurs, convictions) ; **déterminations psy** (états phasiques ou toniques, cf. Cosnier) ; **univers du discours** : la situation (écrit ou oral, lieu, temps, participants) et les **contraintes du genre** (conte, altercation, consultation, cours).", "4:37"],
+        ["Limite : un modèle **verbo-centriste**, sans PMG ni proxémique.", "4:37"]
+      ]},
+      { titre: "4. Le modèle des intentions d'Umberto Eco (1973)", points: [
+        ["**Umberto Eco** remet en cause la **transparence** : on peut communiquer pour **simuler ou dissimuler** une identité, une condition, une passion ; l'allocutaire juge l'intention. Il insiste sur la **dimension stratégique**.", "4:38"],
+        ["Un tableau de **8 cas** selon 3 critères : émission **volontaire (+) ou involontaire (−)** ; réception **consciente (+) ou subliminale (−)** ; **intention attribuée** par le récepteur (+ ou −).", "4:39-40"],
+        ["**(1) Communication normale** (+ + +) : c'est la communication selon Jakobson. **(2) Simulation** (+ + −) : émission volontaire (vêtements, accent) perçue comme involontaire, comme **le camouflage** des animaux.", "4:40"],
+        ["**(3)(4)** émis volontairement, perçus inconsciemment ; **(5)(6)** émis involontairement, perçus consciemment. Exemple : des élèves qui rangent leurs affaires, et le prof qui y voit (ou non) un signal de fin de cours.", "4:41"],
+        ["**(7)** involontaire et subliminal, interprété après coup comme volontaire (quelqu'un glisse et s'exclame). **(8)** personne ne prend conscience de l'échange : cela **contredit Palo Alto** (« on ne peut pas ne pas communiquer »).", "4:42"],
+        ["Conclusion : la communication commence par **l'attribution d'intention et de sens**. La communication « normale » de Jakobson n'est qu'**un cas sur huit**. Eco envisage la **non-communication**.", "4:43"]
+      ]},
+      { titre: "5. La pragmatique et Erving Goffman", points: [
+        ["**Pragmatique linguistique** : le langage en situation d'énonciation, le discours en acte (*speech event*), ses usagers. **Ethnométhodologie** : Harold **Garfinkel** (1967) ; l'analyse conversationnelle décrit comment surgit un tour de parole. **Sociolinguistique** : Labov, Fishman, Goffman.", "4:44"],
+        ["**Erving Goffman** (1922-1982), **élève de Ray Birdwhistell** : il applique à sa propre société les **méthodes d'observation** de l'anthropologie.", "4:44"],
+        ["Ouvrages : *La Mise en scène de la vie quotidienne* (1973), *Les Rites d'interaction* (1974), *Stigmates* (1975), *Asiles* (1979), *Façons de parler* (1987).", "4:46"],
+        ["**A) Ordre social** : une interaction n'est jamais une simple suite d'actions / réactions, c'est toujours « **un certain type d'ordre social** », qui fonctionne comme la société entière. Dans l'interaction, **chacun préserve la face de l'autre et la sienne** ; seules des sanctions morales maintiennent l'ordre.", "4:46-47"],
+        ["**B) La face** : chacun donne **une image valorisée de lui-même**, organise une **mise en scène de son Moi**. La face est un « **territoire du moi** » qu'on protège.", "4:48"],
+        ["**Brown et Levinson** (*Politesse*, 1987) : **face négative** = le territoire qu'on garde secret ; **face positive** = ce qu'on expose (au sens photographique, pas bon / mauvais).", "4:48"],
+        ["L'enjeu est aussi d'**établir et maintenir le contact**. Deux moments délicats : **l'ouverture et la fin** de l'interaction (risque d'intrusion, de rejet, de **perdre la face**).", "4:49"],
+        ["Le sujet est un **portemanteau** : il porte plusieurs **masques** selon la situation. Deux attitudes : **contractuelle** (les rituels) et **conflictuelle** (les stratégies).", "4:51"],
+        ["**Le langage recouvre la relation** sans l'exprimer directement : John demande à Marsha ce qu'elle a pensé du film, et chacune de ses 8 réponses possibles parle en fait de leur relation (*Façons de parler*, 1987).", "4:53"],
+        ["Les **localisateurs** : « le petit machin sous l'évier » à la quincaillerie ; ce sont des « marques d'essai » (Sacks et Schegloff). Entre inconnus, on cherche des connaissances communes pour pouvoir faire allusion.", "4:54-55"]
+      ]},
+      { titre: "Les rituels et les stratégies (Goffman)", points: [
+        ["Fonctions du **rituel** : **diminuer les risques** de chaque interaction ; faciliter le rapprochement et l'interruption **sans offense**.", "4:49"],
+        ["**1. Rituels d'accès et de congé** : ouverture et fermeture de l'interaction (**salutations, adieux**).", "4:50"],
+        ["**2. Rituels de confirmation** : montrer l'attention portée à autrui et confirmer sa face : « t'as raison », « oui, bien sûr, mais », et en non verbal la distance, le hochement de tête, le sourire.", "4:50"],
+        ["**3. Rituels de réparation** : réparer une offense réelle ou potentielle, après ou même **avant** (« Pardon… » – « C'est moi ! » ; s'excuser avant d'emprunter un stylo).", "4:50"],
+        ["**Stratégies** des échanges conflictuels : **masquage, démasquage, contre-démasquage**, semblables au camouflage animal.", "4:52"],
+        ["Exemple de **l'opossum** : il fait le mort (**masquage**) ; le prédateur le touche (**démasquage**) ; il reste rigide et dégage une odeur qui fait fuir (**contre-démasquage**). L'interaction est spontanée quand domine l'attitude contractuelle, **programmée** quand elle devient stratégique.", "4:52"],
+        ["Exemple de conversation stratégique : *Nous, les vivants* (Roy Andersson, 2007), le dialogue d'Ole et de sa femme.", "4:56"]
+      ]},
+      { titre: "La politesse (Kerbrat-Orecchioni, 2010)", points: [
+        ["« L'impolitesse en interaction » (**2010**) : l'interaction est un balancier entre **FTA** (*Face Threatening Acts*, actes menaçant la face) et **FFA** (*Face Flattering Acts*, actes flatteurs). La **politesse** = stratégies de **ménagement et de valorisation** des faces d'autrui, pour préserver l'ordre de l'interaction.", "4:57"],
+        ["**Politesse** : « Je voudrais une baguette » (conditionnel). **Hyperpolitesse** : « Pourriez-vous avoir l'amabilité… » (excès, peut basculer dans l'impolitesse par ironie). **Non-politesse** : « Une gauloise filtre » (absence **normale** au tabac). **Impolitesse** : « Je veux une baguette » (absence **anormale**). **Polirudesse** : pseudo-politesse ou pseudo-impolitesse.", "4:57"],
+        ["Combiner attaque et politesse : un **adoucisseur** (politesse négative, qui peut basculer si l'adoucisseur est insuffisant) ; ou un FTA sous **une enveloppe courtoise** (« agression tropique ») où le sens dérivé l'emporte (métaphore, ironie).", "4:58"],
+        ["La politesse ostentatoire sert surtout à construire **l'ethos du locuteur**.", "4:58"]
+      ]},
+      { titre: "Conclusion sur la communication verbale", points: [
+        ["La partie la plus dynamique des échanges est **linguistique** : usages, codes, politesse, étiquette. La communication mêle **éthique et esthétique**.", "4:59"],
+        ["**Jeu de miroirs** : « Je sais que tu sais » (Ronald **Laing**), jusqu'à « je sais que tu sais que je sais que tu sais ». Seuls les humains conçoivent ces **méta-représentations croisées**.", "4:59"],
+        ["Au-delà des besoins primaires : des **valeurs symboliques** (politesse, idéaux, face, identité), la quantité et la qualité des échanges, la **transmission du patrimoine culturel**.", "4:60"]
+      ]}
+    ],
+
+    p5: [
+      { titre: "1. La communication médiatisée : 3 critères", points: [
+        ["Le **média** est un moyen de communication ou de diffusion d'information. On classe les technologies selon **3 critères** : **réversibilité / irréversibilité**, **synchronie / asynchronie**, **unicité / multiplicité des pôles**.", "5:2"],
+        ["**Réversible** : l'émetteur peut devenir récepteur et inversement (la télécopie). **Irréversible** : télévision, radio ; le flux va de la source vers la cible, **pas de rétroaction** sur le même canal.", "5:2"],
+        ["**Synchronie** (pour les médias réversibles) : échange en temps réel ou différé. Télécopie, courriel, poste = réversibles mais **asynchrones**. Téléphone = réversible et **synchrone** (on peut interrompre). Pour un média irréversible, la question ne se pose pas.", "5:4"],
+        ["**Pôles** : Shannon et Weaver = 2 pôles. TV, radio = **un à plusieurs** (structure hiérarchique). Télécopie, courriel = **plusieurs à un** (le soutien des citoyens aux juges de Milan, enquête « mains propres »).", "5:6-7"],
+        ["**Internet** permet toutes les formes ; la vraie nouveauté est **plusieurs à plusieurs** (la visioconférence, en synchronie).", "5:8"],
+        ["Tableau : télévision et radio = un à plusieurs, irréversibles ; téléphone = un à un, réversible, synchrone ; télécopieur et courrier = réversibles, asynchrones ; Internet = toutes les formes + plusieurs à plusieurs, réversible ou non, synchrone ou non.", "5:9"]
+      ]},
+      { titre: "2. L'IA : caractéristiques", points: [
+        ["Un **moteur de recherche très performant**.", "5:10"],
+        ["**Plusieurs critères de recherche** : le **Prompt Engineering** (l'art de rédiger les instructions).", "5:10"],
+        ["La possibilité **d'approfondir** la recherche d'information.", "5:10"],
+        ["Une **forme dialogique**, une **simulation** : emploi de **déictiques**, **reprise du thème**.", "5:10"],
+        ["Une certaine **illusion de communication de face-à-face**.", "5:10"],
+        ["Une certaine **prise de conscience de l'IA de ce qu'elle est** : **méta-communication** (communication sur la communication).", "5:10"]
       ]}
     ]
   },
@@ -731,25 +836,198 @@ window.MATIERES.semiotique = {
         ["Solution : petites tables carrées, conversations doublées", "3:49"]
       ]},
 
-    { id: "b-1", partie: "intro", officiel: false, src: "1:3-6",
-      q: "Présentez le modèle de la communication de Shannon et ses limites.",
+    { id: "p4-1", partie: "p4", officiel: true, src: "4:61",
+      q: "Décrivez le schéma de la communication de Shannon et Weaver avec ses cinq éléments.",
       plan: [
-        "Intro : la théorie de l'information, née pendant la Seconde Guerre mondiale.",
-        "I. Le modèle des 5 petites boîtes : source, émetteur, canal (bruit), récepteur, destinataire.",
-        "II. Ses défauts : un modèle télégraphique (signification, récepteur passif, contexte, interprétation).",
-        "III. Ce que Palo Alto propose à la place : communication orchestrale, relation.",
-        "Conclusion : utile pour la technique, insuffisant pour la communication humaine."
+        "Intro : la *Théorie mathématique de la communication* (1949), née pendant la Seconde Guerre mondiale chez Bell.",
+        "I. Les 5 éléments (source, émetteur, canal, récepteur, destinataire) + le bruit, avec l'exemple du téléphone ou du langage parlé.",
+        "II. Les notions clés : signal, bruit à éliminer, information ≠ signification, le bit (5 bits pour une carte parmi 32).",
+        "III. Les limites : transmission sans signification, récepteur passif, pas de contexte ni d'interprétation.",
+        "Conclusion : Jakobson lui ajoute la signification, Palo Alto l'oppose à la communication orchestrale."
       ],
       points: [
-        ["Claude Shannon, Bell Telephone Company, Seconde Guerre mondiale", "1:3"],
-        ["5 boîtes : source, émetteur, canal, récepteur, destinataire", "1:4-5"],
-        ["Le bruit sur le canal", "1:4-5"],
-        ["Codage en signal, décodage en message", "1:5"],
-        ["Signification non prise en compte", "1:6"],
-        ["Récepteur passif, information = projectile", "1:6"],
-        ["Contexte et interprétation ignorés", "1:6"],
-        ["Opposition avec la communication orchestrale de Palo Alto", "3:23"]
+        ["Shannon et Weaver, *Théorie mathématique de la communication*, 1949", "4:2"],
+        ["Contexte : Seconde Guerre mondiale, Bell Telephone Company", "1:3"],
+        ["Les 5 éléments dans l'ordre : source, émetteur, canal, récepteur, destinataire", "1:4-5"],
+        ["L'émetteur transforme le message en signal", "4:3"],
+        ["Exemple du téléphone (courant électrique, fil) ou de la télégraphie", "4:3"],
+        ["Langage parlé : cerveau, organe vocal, air, oreille (Bougnoux)", "4:4"],
+        ["Le bruit, à éliminer pour améliorer le signal", "4:5"],
+        ["Information ≠ signification ; le bit (32 cartes = 5 bits)", "4:5"],
+        ["Limites : récepteur passif, contexte et interprétation ignorés", "1:6"],
+        ["Ouverture : communication télégraphique vs orchestrale", "3:23"]
       ]},
+    { id: "p4-2", partie: "p4", officiel: true, src: "4:61",
+      q: "Le schéma de la communication de Roman Jakobson : ressemblances et dissemblances entre le modèle de Jakobson et celui de Shannon et Weaver.",
+      plan: [
+        "Intro : deux schémas de référence, l'un mathématique (1949), l'autre linguistique (1963).",
+        "I. Ressemblances : un schéma d'un pôle à l'autre ; émetteur / récepteur deviennent destinateur / destinataire ; canal → contact ; code commun (encodeur / décodeur).",
+        "II. Dissemblances : chez Jakobson le message a une signification ; 6 facteurs et 6 fonctions ; contexte ; connexion psychologique ; interprétation au lieu d'un décodage mécanique.",
+        "III. Limites communes : un « tête-à-tête idéal » et transparent, sans PMG ni facteurs psychologiques et culturels.",
+        "Conclusion : Kerbrat-Orecchioni et Eco corrigent ces limites (Jakobson = 1 cas sur 8 chez Eco)."
+      ],
+      points: [
+        ["Shannon et Weaver : transmission d'un signal, pas de signification", "4:4"],
+        ["Jakobson : le message a une signification", "4:6"],
+        ["Émetteur / récepteur → destinateur / destinataire", "4:10"],
+        ["Les 6 facteurs : destinateur, destinataire, message, contexte, code, contact", "4:6"],
+        ["Contact = canal physique + connexion psychologique", "4:6"],
+        ["Code commun à l'encodeur et au décodeur, en tout ou en partie", "4:6"],
+        ["6 fonctions du langage (absentes chez Shannon)", "4:7-8"],
+        ["Décodage (mécanique) vs interprétation (subjective, culturelle)", "4:31"],
+        ["Défauts de Jakobson : pas de PMG ni de facteurs psy / culturels, tête-à-tête idéal", "4:31"],
+        ["Ouverture : chez Eco, la communication de Jakobson n'est qu'1 cas sur 8", "4:40;4:43"]
+      ]},
+    { id: "p4-3", partie: "p4", officiel: true, src: "4:61",
+      q: "Quelles sont les six fonctions du langage selon Jakobson ?",
+      plan: [
+        "Intro : Jakobson (1963), 6 facteurs de la communication, à chacun sa fonction ; héritage de l'Antiquité (docere, movere, placere) et de Bühler (1936).",
+        "I. Les fonctions centrées sur les personnes : émotive (destinateur), conative (destinataire).",
+        "II. Les fonctions centrées sur le message et son monde : poétique (message), référentielle (contexte).",
+        "III. Les fonctions centrées sur le lien et le code : phatique (contact), métalinguistique (code).",
+        "Conclusion : les fonctions sont solidaires, l'une domine selon le message ; limites du schéma."
+      ],
+      points: [
+        ["Chaque fonction associée à son facteur", "4:7-8"],
+        ["Émotive : « J'ai faim », les interjections (« Zut ! »)", "4:10"],
+        ["Conative : impératif, vocatif ; « va ouvrir la porte » / « on sonne »", "4:11"],
+        ["Conative et publicité : la cible, la propagande", "4:11"],
+        ["Poétique : jeu sur la forme, pas limitée à la poésie", "4:19"],
+        ["Référentielle : « Il pleut », « route barrée », jamais seule", "4:21"],
+        ["Phatique : « Allô ? », « tu vois », politesse ; Malinowski", "4:23-24"],
+        ["Métalinguistique : « le mot lit a trois lettres », dont / que", "4:25-26"],
+        ["Fonctions solidaires, l'une dominante", "4:9"],
+        ["Antiquité (docere, movere, placere) et Bühler (1936)", "4:9"]
+      ]},
+    { id: "p4-4", partie: "p4", officiel: true, src: "4:61",
+      q: "Quelles corrections apporte C. Kerbrat-Orecchioni au modèle de R. Jakobson ?",
+      plan: [
+        "Intro : Jakobson imagine un échange idéal et transparent ; Kerbrat-Orecchioni (1980) parle de compétences.",
+        "I. Du code commun aux idiolectes : dissymétrie production / reconnaissance, les « ratés » au centre, Culioli.",
+        "II. Les compétences : linguistiques (phonétiques, syntaxiques, sémantiques, paralinguistiques), idéologiques et culturelles, déterminations psy.",
+        "III. L'univers du discours : situation et contraintes de genre ; modèles de production et d'interprétation (l'exemple du ministre).",
+        "Conclusion : un modèle plus réaliste mais verbo-centriste (pas de PMG ni de proxémique)."
+      ],
+      points: [
+        ["Kerbrat-Orecchioni, 1980 : l'échange en termes de compétences", "4:32"],
+        ["L'échange n'est ni harmonieux ni limpide", "4:32"],
+        ["Deux idiolectes partiellement communs au lieu d'un code identique", "4:32"],
+        ["Dissymétrie production / reconnaissance ; les ratés au centre", "4:32"],
+        ["« La compréhension est un cas particulier du malentendu » (Culioli)", "4:32"],
+        ["Référent ≠ situation ; modèles de production et d'interprétation", "4:34"],
+        ["Exemple du ministre : promesse et menace", "4:34"],
+        ["Compétences linguistiques (4 types)", "4:36"],
+        ["Compétences idéologiques et culturelles ; déterminations psy", "4:37"],
+        ["Univers du discours : situation + contraintes du genre", "4:37"],
+        ["Limite : modèle verbo-centriste", "4:37"]
+      ]},
+    { id: "p4-5", partie: "p4", officiel: true, src: "4:61",
+      q: "Comment le modèle des intentions d'Umberto Eco redéfinit-il la communication ? Inclut-il les autres modèles et comment ?",
+      plan: [
+        "Intro : Eco (1973) remet en cause la transparence de la communication.",
+        "I. Simuler, dissimuler, juger l'intention : la dimension stratégique.",
+        "II. Le tableau des 8 cas selon 3 critères (émission, réception, intention attribuée), avec exemples.",
+        "III. Les autres modèles inclus : Jakobson = cas 1 ; la simulation (cas 2) rejoint le camouflage ; le cas 8 s'oppose à Palo Alto.",
+        "Conclusion : la communication commence par l'attribution d'intention ; elle peut être subliminale, ou ne pas avoir lieu."
+      ],
+      points: [
+        ["Umberto Eco, 1973 : transparence remise en cause", "4:38"],
+        ["Simuler ou dissimuler une identité, une condition, une passion", "4:38"],
+        ["Dimension stratégique ; l'allocutaire juge l'intention", "4:38"],
+        ["3 critères : émission (+/−), réception consciente ou subliminale, intention attribuée", "4:40"],
+        ["8 cas au total", "4:39"],
+        ["Cas 1 = communication normale = Jakobson", "4:40"],
+        ["Cas 2 = simulation, comme le camouflage animal", "4:40"],
+        ["Exemple des élèves qui rangent leurs affaires (cas 3 à 6)", "4:41"],
+        ["Cas 8 : personne n'en a conscience, contredit Palo Alto", "4:42"],
+        ["La communication commence par l'attribution d'intention et de sens", "4:43"],
+        ["Jakobson n'est qu'1 cas sur 8 ; Eco envisage la non-communication", "4:43"]
+      ]},
+    { id: "p4-6", partie: "p4", officiel: true, src: "4:61",
+      q: "Quels sont les concepts proposés par Erving Goffman ? Quel est le rôle de la face dans les interactions quotidiennes ?",
+      plan: [
+        "Intro : Goffman (1922-1982), élève de Birdwhistell, observe sa propre société ; la pragmatique et la sociolinguistique.",
+        "I. L'ordre social : toute interaction est un petit ordre social.",
+        "II. Mise en scène, face, masques : la face comme territoire du moi, face positive / négative (Brown et Levinson), le sujet portemanteau.",
+        "III. Le rôle de la face au quotidien : établir et maintenir le contact, ne pas perdre la face, rituels (contractuel) ou stratégies (conflictuel) ; le langage recouvre la relation (John et Marsha).",
+        "Conclusion : lien avec la politesse de Kerbrat-Orecchioni (FTA / FFA)."
+      ],
+      points: [
+        ["Goffman (1922-1982), élève de Birdwhistell, méthodes d'observation", "4:44"],
+        ["Un ou deux ouvrages (*La Mise en scène de la vie quotidienne*, 1973 ; *Les Rites d'interaction*, 1974)", "4:46"],
+        ["Ordre social : l'interaction fonctionne comme la société", "4:46-47"],
+        ["Chacun préserve la face de l'autre et la sienne", "4:47"],
+        ["Face = image valorisée de soi, « territoire du moi », mise en scène du Moi", "4:48"],
+        ["Face positive / négative (Brown et Levinson, 1987)", "4:48"],
+        ["Établir et maintenir le contact ; ouverture et fin = moments délicats", "4:49"],
+        ["Le sujet portemanteau, plusieurs masques ; perdre la face", "4:51"],
+        ["Attitudes contractuelle (rituels) et conflictuelle (stratégies)", "4:51"],
+        ["Le langage recouvre la relation : John et Marsha", "4:53"],
+        ["Ouverture : politesse, FTA et FFA", "4:57"]
+      ]},
+    { id: "p4-7", partie: "p4", officiel: true, src: "4:61",
+      q: "Quels types de rituels y a-t-il, selon E. Goffman, et quel est le rôle du rituel dans l'interaction ?",
+      plan: [
+        "Intro : chez Goffman, toute interaction risque de faire perdre la face.",
+        "I. Le rôle du rituel : diminuer les risques, rapprocher et interrompre sans offense ; il relève de l'attitude contractuelle.",
+        "II. Les 3 rituels : accès et congé, confirmation, réparation, avec exemples verbaux et non verbaux.",
+        "III. Ouverture : la fonction phatique de Jakobson (politesse, salutations) et les rituels animaux (menace / apaisement).",
+        "Conclusion : le rituel protège la face et l'ordre de l'interaction."
+      ],
+      points: [
+        ["Rôle : diminuer les risques de chaque interaction", "4:49"],
+        ["Rôle : rapprochement et interruption sans offense", "4:49"],
+        ["Accès et congé : salutations, adieux", "4:50"],
+        ["Confirmation : « t'as raison », « oui, bien sûr, mais »", "4:50"],
+        ["Confirmation en non verbal : distance, hochement de tête, sourire", "4:50"],
+        ["Réparation : après ou avant l'offense (« Pardon… » – « C'est moi ! »)", "4:50"],
+        ["Les rituels relèvent de l'attitude contractuelle", "4:51"],
+        ["Lien : fonction phatique, politesse", "4:24"],
+        ["Lien : ritualisation animale (Huxley)", "2:12"]
+      ]},
+    { id: "p4-8", partie: "p4", officiel: true, src: "4:61",
+      q: "Pouvons-nous comparer les stratégies linguistiques décrites par E. Goffman aux stratégies décrites dans le comportement des animaux en éthologie ?",
+      plan: [
+        "Intro : Goffman lui-même fait la comparaison.",
+        "I. Les stratégies de Goffman : masquage, démasquage, contre-démasquage, dans l'attitude conflictuelle.",
+        "II. Les stratégies animales : camouflage (simulation / dissimulation), communication mensongère (Eco), thanatose ; l'exemple de l'opossum qui illustre les trois étapes.",
+        "III. Les limites de la comparaison : chez l'humain, la face, le langage qui recouvre la relation, les méta-représentations croisées (« je sais que tu sais ») ; l'animal reste dans l'ici et maintenant.",
+        "Conclusion : oui pour la logique stratégique, non pour la complexité symbolique."
+      ],
+      points: [
+        ["Masquage, démasquage, contre-démasquage", "4:52"],
+        ["Exemple de l'opossum dans le cours de Goffman", "4:52"],
+        ["Interaction spontanée (contractuelle) vs programmée (stratégique)", "4:52"],
+        ["Camouflage : simulation et dissimulation", "2:3"],
+        ["Communication mensongère (Eco 1975), thanatose", "2:4"],
+        ["Cas 2 d'Eco : la simulation, comme le camouflage", "4:40"],
+        ["Rites animaux : menace et apaisement", "2:12"],
+        ["Limite : méta-représentations croisées, propres à l'humain", "4:59"],
+        ["Limite : communication animale de l'instant, sans abstraction", "2:45"]
+      ]},
+    { id: "p4-9", partie: "p4", officiel: true, src: "4:61",
+      q: "Qu'est-ce que la politesse, selon C. Kerbrat-Orecchioni, et quels sont les termes connexes ?",
+      plan: [
+        "Intro : la face de Goffman et de Brown et Levinson ; « L'impolitesse en interaction » (2010).",
+        "I. Définition : un balancier entre FTA et FFA ; ménager et valoriser les faces d'autrui pour préserver l'ordre de l'interaction.",
+        "II. Les termes connexes avec leurs exemples : politesse, hyperpolitesse, non-politesse, impolitesse, polirudesse.",
+        "III. Combiner attaque et politesse : adoucisseur (politesse négative), agression tropique ; la politesse ostentatoire et l'ethos.",
+        "Conclusion : la communication comme mélange d'éthique et d'esthétique."
+      ],
+      points: [
+        ["Kerbrat-Orecchioni, « L'impolitesse en interaction », 2010", "4:57"],
+        ["FTA (menacent la face) et FFA (flattent la face)", "4:57"],
+        ["Définition : ménager et valoriser les faces d'autrui", "4:57"],
+        ["Politesse : « Je voudrais une baguette »", "4:57"],
+        ["Hyperpolitesse : « Pourriez-vous avoir l'amabilité… »", "4:57"],
+        ["Non-politesse (normale) : « Une gauloise filtre »", "4:57"],
+        ["Impolitesse (anormale) : « Je veux une baguette »", "4:57"],
+        ["Polirudesse : pseudo-politesse / pseudo-impolitesse", "4:57"],
+        ["Adoucisseur, politesse négative ; agression tropique", "4:58"],
+        ["Politesse ostentatoire = ethos du locuteur", "4:58"],
+        ["Lien : la face (Goffman ; Brown et Levinson)", "4:48"]
+      ]},
+
     { id: "b-2", partie: "intro", officiel: false, src: "1:7-9",
       q: "Présentez les trois types de communication (non verbale, verbale, multimodale).",
       plan: [
@@ -899,7 +1177,56 @@ window.MATIERES.semiotique = {
     ["p3", "Distance publique ?", "Proche : **3,60 à 7,50 m** (prof / élèves). Éloignée : **7,50 m et plus** (politique, spectacle).", "3:43"],
     ["p3", "Sociofuge ou sociopète ?", "**Sociofuge** : sépare (salle d'attente de gare). **Sociopète** : rassemble (terrasse de café). Notion d'**Humphry Osmond**.", "3:45"],
     ["p3", "Le résultat de Robert Sommer ?", "Assis **en coin** : le plus de conversations ; puis côte à côte, face à face, diagonale. Les **petites tables carrées** doublent les conversations.", "3:48-49"],
-    ["p3", "Conclusion du cours 3 : que produit le corps ?", "Des **indices** (symptômes), des **signaux**, des **symboles**, selon son degré d'intention.", "3:50"]
+    ["p3", "Conclusion du cours 3 : que produit le corps ?", "Des **indices** (symptômes), des **signaux**, des **symboles**, selon son degré d'intention.", "3:50"],
+
+    ["p4", "Shannon et Weaver : titre et date de l'ouvrage ?", "*Théorie mathématique de la communication*, **1949**.", "4:2"],
+    ["p4", "Dans le langage parlé, qui joue quel rôle chez Shannon ?", "Source = **cerveau** de X ; émetteur = **organe vocal** ; canal = **l'air** ; récepteur = **oreille** de Y ; destination = cerveau de Y.", "4:4"],
+    ["p4", "Qu'est-ce qu'un bit ?", "L'unité d'information d'un **choix binaire**. Trouver une carte parmi 32 demande **5 bits**.", "4:5"],
+    ["p4", "Le bruit selon Shannon et Weaver ?", "Les altérations qui s'ajoutent au signal ; il faut **l'éliminer** pour améliorer le signal.", "4:5"],
+    ["p4", "Les 6 facteurs de Jakobson ?", "**Destinateur, destinataire, message, contexte, code, contact.**", "4:6"],
+    ["p4", "Les 6 fonctions de Jakobson, dans l'ordre des facteurs ?", "**Émotive** (destinateur), **conative** (destinataire), **poétique** (message), **référentielle** (contexte), **phatique** (contact), **métalinguistique** (code).", "4:7-8"],
+    ["p4", "Le contact chez Jakobson, c'est quoi exactement ?", "Un **canal physique** et une **connexion psychologique** entre destinateur et destinataire.", "4:6"],
+    ["p4", "Les 3 fonctions de Karl Bühler (1936) ?", "**Représentation**, **appel**, **expression**.", "4:9"],
+    ["p4", "Les 3 fonctions de l'Antiquité ?", "*Docere* (informer), *movere* (émouvoir), *placere* (plaire).", "4:9"],
+    ["p4", "Fonction émotive : marque la plus pure ?", "Les **interjections** (« Zut ! »).", "4:10"],
+    ["p4", "Conatif direct ou indirect ?", "Direct : « **va ouvrir la porte** ». Indirect : « **on sonne** » (il faut faire une inférence).", "4:11"],
+    ["p4", "La fonction poétique est-elle réservée à la poésie ?", "Non : elle y est **dominante**, ailleurs **subsidiaire**. Tout texte a un souci de la forme.", "4:19"],
+    ["p4", "Exemples d'énoncés strictement référentiels ?", "« **Route barrée** », les télégrammes, les étiquettes.", "4:21"],
+    ["p4", "La fonction phatique, avec exemples ?", "Maintenir le contact : « **Allô ?** », « tu vois », « n'est-ce pas », et **toute la politesse** (salutations, remerciements).", "4:23-24"],
+    ["p4", "Ce que dit Malinowski (1923) des propos sur la météo ?", "Ils ne servent pas à informer : ils remplissent **une fonction sociale**.", "4:24"],
+    ["p4", "Activité métalinguistique avec ou sans métalangage ?", "**Sans** : corriger « que » en « dont ». **Avec** : expliquer la règle avec des termes de grammaire (« pronom relatif »…).", "4:25-26"],
+    ["p4", "Dénotation, connotation, métalangage (Barthes) ?", "« **Nuit** » (obscurité) ; « **la nuit des temps** » (le chaos) ; « *nuit* est la racine de *nuitée* ».", "4:27-28"],
+    ["p4", "Décodage ou interprétation ?", "**Décodage** : mécanique, fait par un appareil. **Interprétation** : subjective et culturelle.", "4:31"],
+    ["p4", "Les 2 défauts du schéma de Jakobson ?", "Il ignore la **PMG** et les facteurs psy et culturels ; il suppose un « **tête-à-tête idéal** » transparent.", "4:31"],
+    ["p4", "L'idée clé de Kerbrat-Orecchioni (1980) ?", "Parler de **compétences** : deux **idiolectes partiellement communs**, un échange ni harmonieux ni limpide.", "4:32"],
+    ["p4", "Citation de Culioli ?", "« La compréhension est **un cas particulier du malentendu**. »", "4:32"],
+    ["p4", "Les 4 compétences linguistiques (Kerbrat-Orecchioni) ?", "**Phonétiques**, **syntaxiques**, **sémantiques**, **paralinguistiques** (prosodie).", "4:36"],
+    ["p4", "La limite du modèle de Kerbrat-Orecchioni ?", "Il est **verbo-centriste** : ni PMG ni proxémique.", "4:37"],
+    ["p4", "Les 3 critères du tableau d'Eco (1973) ?", "Émission **volontaire ou non** ; réception **consciente ou subliminale** ; **intention attribuée** par le récepteur.", "4:40"],
+    ["p4", "Cas 1 et cas 2 chez Eco ?", "**1** : communication normale (= Jakobson). **2** : **simulation**, volontaire mais perçue comme involontaire, comme le camouflage.", "4:40"],
+    ["p4", "Pourquoi le cas 8 d'Eco pose problème ?", "Personne ne prend conscience de l'échange : cela **contredit Palo Alto** (« on ne peut pas ne pas communiquer »).", "4:42"],
+    ["p4", "La conclusion d'Eco ?", "La communication commence par **l'attribution d'intention**. La communication « normale » n'est qu'**un cas sur huit**.", "4:43"],
+    ["p4", "Qui a fondé l'ethnométhodologie ?", "**Harold Garfinkel**, *Studies in Ethnomethodology* (1967).", "4:44"],
+    ["p4", "Erving Goffman : dates et maître ?", "**1922-1982**, **élève de Ray Birdwhistell**.", "4:44"],
+    ["p4", "La face selon Goffman ?", "L'**image valorisée** que chacun donne de lui ; un « **territoire du moi** » qu'on protège.", "4:48"],
+    ["p4", "Face positive et face négative (Brown et Levinson, 1987) ?", "**Positive** : ce qu'on expose. **Négative** : le territoire qu'on garde secret (au sens photographique).", "4:48"],
+    ["p4", "Les 3 rituels de Goffman ?", "**Accès et congé** (salutations), **confirmation** (« t'as raison »), **réparation** (« Pardon… »).", "4:50"],
+    ["p4", "À quoi sert le rituel ?", "**Diminuer les risques** de l'interaction ; rapprocher et interrompre **sans offense**.", "4:49"],
+    ["p4", "Les 3 stratégies de Goffman ?", "**Masquage, démasquage, contre-démasquage** (ex. l'opossum).", "4:52"],
+    ["p4", "L'image du portemanteau chez Goffman ?", "L'individu porte **plusieurs masques** selon la situation, comme un portemanteau des vêtements.", "4:51"],
+    ["p4", "FTA et FFA ?", "**FTA** : actes qui **menacent** la face. **FFA** : actes qui **flattent** la face (Kerbrat-Orecchioni, 2010).", "4:57"],
+    ["p4", "Non-politesse ou impolitesse ?", "**Non-politesse** : absence **normale** de marqueur (« Une gauloise filtre »). **Impolitesse** : absence **anormale** (« Je veux une baguette »).", "4:57"],
+    ["p4", "Hyperpolitesse et polirudesse ?", "**Hyperpolitesse** : marqueurs excessifs (« Pourriez-vous avoir l'amabilité… »). **Polirudesse** : pseudo-politesse ou pseudo-impolitesse.", "4:57"],
+    ["p4", "« Je sais que tu sais » : de qui ?", "**Ronald Laing** : les méta-représentations croisées, propres aux humains.", "4:59"],
+
+    ["p5", "Les 3 critères pour classer les médias ?", "**Réversibilité**, **synchronie**, **nombre de pôles**.", "5:2"],
+    ["p5", "Média réversible ou irréversible ?", "**Réversible** : l'émetteur peut devenir récepteur (télécopie). **Irréversible** : TV, radio, pas de rétroaction.", "5:2"],
+    ["p5", "Pourquoi le téléphone est-il synchrone ?", "On échange en **temps réel** : on peut interrompre l'autre à tout moment.", "5:4"],
+    ["p5", "Courriel et poste : synchrones ?", "Non : réversibles mais **asynchrones**, il faut attendre le message pour répondre.", "5:4"],
+    ["p5", "La vraie nouveauté d'Internet ?", "La communication **plusieurs à plusieurs** (ex. la visioconférence, en synchronie).", "5:8"],
+    ["p5", "Les 6 caractéristiques de l'IA dans le cours ?", "Moteur de recherche **très performant** ; **prompt engineering** ; **approfondir** ; **forme dialogique**, simulation (déictiques, reprise du thème) ; **illusion de face-à-face** ; **méta-communication**.", "5:10"],
+    ["p5", "Le prompt engineering ?", "**L'art de rédiger les instructions** données à l'IA.", "5:10"],
+    ["p5", "Selon le cours, que simule l'IA ?", "Une **forme dialogique** : emploi de **déictiques**, **reprise du thème**, avec une **illusion de face-à-face**.", "5:10"]
   ],
 
   /* ------------------------------------------------------------------ */
@@ -941,7 +1268,22 @@ window.MATIERES.semiotique = {
     ["p3", "À 1 m de quelqu'un, dans quelle distance est-on selon Hall ?", ["Intime", "Personnelle", "Sociale", "Publique"], 1, "Personnelle, mode éloigné : 75 à 125 cm.", "3:42"],
     ["p3", "Un guichet de banque correspond à quelle distance ?", ["Intime", "Personnelle", "Sociale", "Publique"], 2, "Distance sociale, mode proche : la distance administrative.", "3:42"],
     ["p3", "Une terrasse de café est un espace…", ["Sociofuge", "Sociopète", "Fixe", "Intime"], 1, "Sociopète : il favorise le contact.", "3:45"],
-    ["p3", "Chez Sommer, quelle position produit le plus de conversations ?", ["Face à face", "Côte à côte", "En coin", "En diagonale"], 2, "De part et d'autre d'un coin (F-A).", "3:48-49"]
+    ["p3", "Chez Sommer, quelle position produit le plus de conversations ?", ["Face à face", "Côte à côte", "En coin", "En diagonale"], 2, "De part et d'autre d'un coin (F-A).", "3:48-49"],
+    ["p4", "Combien de bits faut-il pour trouver une carte parmi 32 ?", ["3", "5", "8", "32"], 1, "Chaque question binaire élimine la moitié des cartes : 5 bits.", "4:5"],
+    ["p4", "« Allô, André ? » relève de quelle fonction ?", ["Conative", "Phatique", "Référentielle", "Poétique"], 1, "Vérifier le contact : fonction phatique.", "4:23"],
+    ["p4", "« On sonne », pour demander d'aller ouvrir, c'est…", ["Du conatif direct", "Du conatif indirect", "Du phatique", "De l'émotif"], 1, "Le destinataire doit faire une inférence : conatif indirect.", "4:11"],
+    ["p4", "« Le mot lit a trois lettres » relève de quelle fonction ?", ["Référentielle", "Poétique", "Métalinguistique", "Expressive"], 2, "Le langage parle de lui-même.", "4:25"],
+    ["p4", "« Zut ! » illustre surtout la fonction…", ["Émotive", "Conative", "Phatique", "Métalinguistique"], 0, "Les interjections forment la couche purement émotive.", "4:10"],
+    ["p4", "Pour Kerbrat-Orecchioni, destinateur et destinataire partagent…", ["Un code identique", "Deux idiolectes partiellement communs", "Aucun code", "Un métalangage"], 1, "Elle remplace le code commun par deux idiolectes partiellement communs.", "4:32"],
+    ["p4", "Dans le tableau d'Eco, la communication selon Jakobson correspond au…", ["Cas 1", "Cas 2", "Cas 5", "Cas 8"], 0, "Cas 1 : émission volontaire, réception consciente, intention reconnue.", "4:40"],
+    ["p4", "Quel cas d'Eco contredit Palo Alto ?", ["Cas 1", "Cas 2", "Cas 4", "Cas 8"], 3, "Personne ne prend conscience de l'échange.", "4:42"],
+    ["p4", "S'excuser avant d'emprunter un stylo est un rituel…", ["D'accès", "De confirmation", "De réparation", "De congé"], 2, "Un rituel de réparation peut précéder l'offense.", "4:50"],
+    ["p4", "L'opossum qui reste rigide et dégage une odeur quand on le touche fait du…", ["Masquage", "Démasquage", "Contre-démasquage", "Rituel de congé"], 2, "Il répond à la tactique de démasquage du prédateur.", "4:52"],
+    ["p4", "« Une gauloise filtre » au bureau de tabac, c'est de la…", ["Politesse", "Non-politesse", "Impolitesse", "Hyperpolitesse"], 1, "Absence normale de marqueur de politesse dans ce contexte.", "4:57"],
+    ["p4", "Goffman était l'élève de…", ["Bateson", "Birdwhistell", "Jakobson", "Hall"], 1, "Erving Goffman, élève de Ray Birdwhistell.", "4:44"],
+    ["p5", "La télévision est un média…", ["Réversible et synchrone", "Irréversible, un à plusieurs", "Réversible, plusieurs à un", "Un à un"], 1, "Pas de rétroaction sur le même canal, un émetteur pour plusieurs récepteurs.", "5:2;5:9"],
+    ["p5", "Le courriel est…", ["Réversible et asynchrone", "Irréversible", "Réversible et synchrone", "Plusieurs à plusieurs uniquement"], 0, "On peut répondre, mais en différé.", "5:4"],
+    ["p5", "Selon le cours, le prompt engineering est…", ["Un bug de l'IA", "L'art de rédiger les instructions", "Un moteur de recherche", "Une fonction du langage"], 1, "C'est un des critères de recherche propres à l'IA.", "5:10"]
   ],
 
   /* ------------------------------------------------------------------ */
@@ -971,7 +1313,18 @@ window.MATIERES.semiotique = {
     ["Jacques Cosnier", "La posturo-mimo-gestualité", "3:29"],
     ["Edward T. Hall", "La proxémique", "3:39"],
     ["Humphry Osmond", "Sociofuge / sociopète", "3:45"],
-    ["Robert Sommer", "Les conversations à la cafétéria", "3:49"]
+    ["Robert Sommer", "Les conversations à la cafétéria", "3:49"],
+    ["Roman Jakobson", "Les 6 fonctions du langage", "4:6-8"],
+    ["Karl Bühler", "Représentation, appel, expression", "4:9"],
+    ["Malinowski", "La fonction sociale des propos sur la météo", "4:24"],
+    ["Roland Barthes", "Dénotation, connotation, métalangage", "4:27"],
+    ["Kerbrat-Orecchioni", "Compétences, idiolectes, FTA et FFA", "4:32;4:57"],
+    ["Antoine Culioli", "La compréhension, cas particulier du malentendu", "4:32"],
+    ["Umberto Eco (1973)", "Le modèle des intentions, 8 cas", "4:38-39"],
+    ["Harold Garfinkel", "L'ethnométhodologie", "4:44"],
+    ["Erving Goffman", "La face et les rituels", "4:48-50"],
+    ["Brown et Levinson", "Face positive et face négative", "4:48"],
+    ["Ronald Laing", "« Je sais que tu sais »", "4:59"]
   ],
 
   /* ------------------------------------------------------------------ */
@@ -1002,7 +1355,20 @@ window.MATIERES.semiotique = {
     ["2005", "Laurence Henry", "L'oiseau, modèle de l'apprentissage du langage", "2:20"],
     ["2008", "Thaler et Sunstein", "Le nudge", "1:32"],
     ["2008", "Paul Ricœur", "L'empathie comme résonance du corps propre", "1:18"],
-    ["2014", "Alain Rabatel", "Le dialogisme interne, « des autres en soi »", "1:21"]
+    ["2014", "Alain Rabatel", "Le dialogisme interne, « des autres en soi »", "1:21"],
+    ["1923", "Bronislaw Malinowski", "La fonction sociale des échanges (fonction phatique)", "4:24"],
+    ["1936", "Karl Bühler", "Représentation, appel, expression", "4:9"],
+    ["1949", "Shannon et Weaver", "*Théorie mathématique de la communication*", "4:2"],
+    ["1963", "Roman Jakobson", "Les 6 facteurs et les 6 fonctions du langage", "4:6"],
+    ["1967", "Roland Barthes", "Dénotation, connotation, métalangage", "4:27"],
+    ["1967", "Harold Garfinkel", "*Studies in Ethnomethodology*", "4:44"],
+    ["1973", "Umberto Eco", "Le modèle des intentions (8 cas)", "4:39"],
+    ["1973", "Erving Goffman", "*La Mise en scène de la vie quotidienne*", "4:46"],
+    ["1974", "Erving Goffman", "*Les Rites d'interaction*", "4:46"],
+    ["1980", "Catherine Kerbrat-Orecchioni", "L'échange en termes de compétences", "4:32"],
+    ["1987", "Brown et Levinson", "*Politesse* : face positive et face négative", "4:48"],
+    ["1987", "Erving Goffman", "*Façons de parler*", "4:46"],
+    ["2010", "Catherine Kerbrat-Orecchioni", "« L'impolitesse en interaction » : FTA et FFA", "4:57"]
   ],
 
   /* ------------------------------------------------------------------ */
@@ -1012,22 +1378,29 @@ window.MATIERES.semiotique = {
     consigne: "Réaliser une communication avec l'IA sur un sujet qui vous intéresse et analyser cette communication selon les modalités délimitées durant le cours. Qu'est-ce qui différencie l'IA d'un moteur de recherche ? Relever des marqueurs de communication et d'énonciation : emploi de déictiques, marqueurs interactionnels ou relationnels (différents de ceux qui véhiculent seulement des informations), marqueurs de dépassement de la distance sociale, etc.",
     consigneSrc: "3:2",
     etapes: [
-      "Choisis un sujet qui t'intéresse vraiment (la consigne le demande) et mène une vraie conversation de plusieurs échanges, avec des relances.",
-      "Fais la même recherche sur un moteur de recherche, pour avoir un point de comparaison concret.",
-      "Relève dans la conversation des citations exactes pour chaque catégorie de la grille ci-dessous.",
-      "Analyse chaque relevé avec une notion du cours, en citant l'auteur."
+      "**Choisis un sujet qui t'intéresse vraiment** (la consigne le demande). Exemple : une question de pub, de motion design, de 3D. *(5 min)*",
+      "**Mène une vraie conversation de 8 à 10 échanges.** Pour faire apparaître les marqueurs, varie les situations : dis bonjour, remercie, contredis l'IA une fois, demande-lui son avis (« et toi, t'en penses quoi ? »), demande-lui ce qu'elle est. *(20 à 30 min)*",
+      "**Garde une trace** : copie la conversation ou fais des captures, tu dois pouvoir citer ses phrases exactes. *(5 min)*",
+      "**Tape la même question dans un moteur de recherche** et note ce qui change (forme de la réponse, dialogue ou pas, relation ou pas). *(10 min)*",
+      "**Relève les marqueurs** avec la grille ci-dessous, en collant les citations exactes. *(30 à 45 min)*",
+      "**Rédige l'analyse** : pour chaque marqueur, cite la phrase, nomme la notion du cours et son auteur, puis explique ce que ça montre. *(1h à 1h30)*"
     ],
     grille: [
-      { titre: "Déictiques", quoi: "« je », « tu / vous », « ici », « maintenant », « aujourd'hui », « demain »… Qui est le « je » de l'IA ? A-t-elle un ici-maintenant ?", notions: "Déictiques et situation d'énonciation, je-ici-maintenant (Cosnier)", src: "3:30-31" },
-      { titre: "Marqueurs interactionnels ou relationnels", quoi: "Salutations, remerciements, excuses, compliments, questions de relance, « bonne question », formules d'encouragement : tout ce qui entretient la relation sans apporter d'information.", notions: "Niveau du contenu vs niveau de la relation (axiome iii) ; maintenance et régulation de la relation (Cosnier) ; face et rituels (Goffman), politesse", src: "3:28;3:29;1:8" },
-      { titre: "Dépassement de la distance sociale", quoi: "Tutoiement, familiarité, humour, confidences, ton complice : l'IA se rapproche-t-elle comme on passerait de la distance sociale à la distance personnelle ?", notions: "Les 4 distances de Hall, prises au sens figuré", src: "3:42-43" },
-      { titre: "Méta-communication", quoi: "Quand l'IA parle de sa propre réponse : « je vais te répondre en 3 points », « pour être clair »…", notions: "Méta-communication ; axiome ii", src: "1:8;3:28" },
-      { titre: "Affects affichés", quoi: "L'IA dit-elle être ravie, désolée, enthousiaste ? Ces affects sont-ils vécus ou mis en scène ?", notions: "Communication émotionnelle vs émotive (simulation) ; empathie et résonance du corps (Ricœur)", src: "3:36-37;1:18" },
-      { titre: "Type d'interaction", quoi: "Qui mène l'échange ? L'IA se met-elle en position basse (servir) ou haute (expliquer, corriger) ?", notions: "Interaction symétrique / complémentaire (axiome v)", src: "3:28" }
+      { titre: "1. Déictiques", quoi: "« je », « tu / vous », « ici », « maintenant », « aujourd'hui », « demain »… Qui est le « je » de l'IA ? A-t-elle un ici et un maintenant ?", notions: "Les déictiques ne se comprennent que par la situation d'énonciation, le je-ici-maintenant (Cosnier). Le cours cite l'emploi des déictiques comme une marque de la **simulation** du dialogue par l'IA.", src: "3:30-31;5:10" },
+      { titre: "2. Reprise du thème", quoi: "L'IA reprend tes mots, renvoie à ce que tu as dit avant : « comme tu le disais », « pour revenir à ta question ».", notions: "Forme dialogique, reprise du thème (cours 5). Les énoncés sont co-produits par les interactants (interactivité, Cosnier).", src: "5:10;3:29" },
+      { titre: "3. Marqueurs phatiques (garder le contact)", quoi: "« Bonjour ! », « N'hésite pas si… », « Tu veux que je développe ? », « J'espère que ça t'aide » : des phrases qui n'informent pas mais entretiennent le lien.", notions: "Fonction phatique (Jakobson) ; Malinowski : ces propos ont une fonction sociale. Rituels d'accès et de congé (Goffman).", src: "4:23-24;4:50" },
+      { titre: "4. Marqueurs relationnels, face et politesse", quoi: "Compliments (« Excellente question ! »), excuses (« Désolé pour la confusion »), approbation (« Tu as raison »), adoucisseurs (« peut-être », « si tu veux »).", notions: "Niveau de la relation vs niveau du contenu (Palo Alto). La face et les rituels de confirmation et de réparation (Goffman). FFA, adoucisseurs, hyperpolitesse (Kerbrat-Orecchioni).", src: "3:28;4:48;4:50;4:57-58" },
+      { titre: "5. Dépassement de la distance sociale", quoi: "Tutoiement, familiarité, humour, émojis, ton complice ou confident. L'IA se rapproche-t-elle comme on passerait de la distance sociale à la distance personnelle ?", notions: "Les 4 distances de Hall, prises au sens figuré. L'« illusion de communication de face-à-face » que le cours attribue à l'IA.", src: "3:42-43;5:10" },
+      { titre: "6. Fonction conative (t'interpeller)", quoi: "Questions qu'elle te pose, impératifs : « Dis-moi… », « Essaie de… », « Tu préfères quelle option ? ».", notions: "Fonction conative : impératif, interpellation, le destinataire doit se sentir concerné (Jakobson).", src: "4:11" },
+      { titre: "7. Affects affichés (fonction expressive)", quoi: "« Je trouve que… », « Je suis ravi de t'aider », « C'est passionnant ! ». L'IA exprime-t-elle des émotions ? Sont-elles vécues ?", notions: "Fonction émotive (Jakobson). Communication émotive = mise en scène, voire simulation d'affects (Cosnier). Le cas 2 d'Eco : la simulation.", src: "4:10;3:36-37;4:40" },
+      { titre: "8. Méta-communication", quoi: "Quand l'IA parle d'elle-même ou de sa réponse : « En tant qu'IA, je ne peux pas… », « Je vais te répondre en 3 points ».", notions: "Le cours parle d'une « certaine prise de conscience de l'IA de ce qu'elle est » : la méta-communication. Fonction métalinguistique (Jakobson) ; axiome ii de Palo Alto.", src: "5:10;4:25;3:28" },
+      { titre: "9. L'IA comme média", quoi: "Classe l'échange selon les 3 critères : réversible ou non ? synchrone ou non ? combien de pôles ?", notions: "Les 3 critères de la communication médiatisée et le tableau récapitulatif (cours 5).", src: "5:2;5:4;5:9" }
     ],
     pistes: [
-      { texte: "Un moteur de recherche renvoie des liens : cela ressemble à une **transmission d'informations**, proche du modèle télégraphique (Shannon). Une IA conversationnelle **co-produit** l'échange et entretient une relation : on peut discuter si elle se rapproche du modèle orchestral.", src: "1:6;3:23;3:29" },
-      { texte: "L'IA n'a pas de corps : pas de posturo-mimo-gestualité, pas de proxémique réelle, pas de résonance corporelle. On peut se demander si ses marques d'empathie sont de la communication émotive, donc une simulation.", src: "3:29;1:18;3:36" }
+      { texte: "**IA ou moteur de recherche ?** Le cours donne lui-même la base de la réponse : l'IA est un moteur de recherche très performant, **mais** elle a une forme dialogique, simule le face-à-face et fait de la méta-communication. Ta conversation doit montrer ces différences avec des exemples.", src: "5:10" },
+      { texte: "Un moteur de recherche ressemble à une **transmission d'informations** (modèle de Shannon). L'IA **co-produit** l'échange et entretient une relation : tu peux discuter si elle se rapproche du modèle orchestral, ou si ce n'est qu'une illusion.", src: "4:4;3:23;3:29;5:10" },
+      { texte: "L'IA n'a **pas de corps** : ni posturo-mimo-gestualité, ni proxémique réelle. Les modèles verbaux (Jakobson, Kerbrat-Orecchioni) lui conviennent mieux que ceux du non verbal. Ses marques d'empathie relèvent-elles de la communication émotive, donc d'une simulation ?", src: "3:29;4:31;4:37;3:36" },
+      { texte: "Avec **Eco**, tu peux te demander quelle intention tu attribues à l'IA : ses compliments sont-ils sincères, stratégiques, ou sans intention du tout ?", src: "4:38;4:43" }
     ]
   }
 };
