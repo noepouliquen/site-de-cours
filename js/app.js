@@ -104,7 +104,7 @@
   /* ---------------- Routeur ---------------- */
   let current = "";
   const routes = {
-    accueil: viewHome, sujets: viewSujets, sujet: viewSujet, examen: viewExam, cartes: viewCards,
+    accueil: viewHome, sujets: viewSujets, sujet: viewSujet, essentiel: viewEssentiel, examen: viewExam, cartes: viewCards,
     fiches: viewFiches, quiz: viewQuiz, paires: viewPairs, reperes: viewReperes, "exo-ia": viewExo, plus: viewPlus
   };
   function route() {
@@ -115,7 +115,7 @@
     if (!routes[name]) name = "accueil";
     current = name;
     const sideKey = name === "sujet" ? "sujets" : name;
-    const tabKey = { sujet: "sujets", examen: "sujets", quiz: "plus", paires: "plus", reperes: "plus", "exo-ia": "plus" }[name] || name;
+    const tabKey = { sujet: "sujets", examen: "sujets", essentiel: "sujets", quiz: "plus", paires: "plus", reperes: "plus", "exo-ia": "plus" }[name] || name;
     document.querySelectorAll("[data-nav]").forEach((a) => {
       const on = a.dataset.nav === (a.closest(".tabbar") ? tabKey : sideKey);
       a.classList.toggle("is-active", on);
@@ -145,8 +145,8 @@
         '<a href="#cartes">Revoir les cartes ratées</a>',
         '<a href="#exo-ia">Boucler l\'exercice IA</a> (à rendre le 01/10)'] },
       { off: 0, label: "Jour J", date: "jeu. 01/10", items: [
-        'Nouveau : lire les fiches <a href="#fiches-p4">IV (communication verbale)</a> et <a href="#fiches-p5">V (médias, IA)</a>',
-        '<a href="#sujets">Les 9 sujets de la partie IV</a> : au moins le plan de chacun',
+        '<a href="#essentiel">Lire les réponses types</a> des sujets qui peuvent tomber, en commençant par la partie IV',
+        'En réécrire 2 ou 3 de mémoire dans <a href="#sujets">Sujets</a>, chrono en main',
         '<a href="#exo-ia">Finir l\'exercice IA</a> avant 14h',
         '<a href="#cartes">Flash-révision</a> des cartes à revoir'] }
     ];
@@ -179,9 +179,9 @@
       </section>
 
       <section class="quick" aria-label="Actions rapides">
-        <a class="primary" href="#cartes"><strong>Réviser les cartes</strong><span>${plural(due, "carte à revoir", "cartes à revoir")} maintenant</span></a>
-        <a href="#sujet-${esc(shuffle(OFFICIELS)[0].id)}"><strong>Sujet au hasard</strong><span>${done}/${OFFICIELS.length} sujets officiels déjà travaillés</span></a>
-        <a href="#examen"><strong>Examen blanc</strong><span>3 sujets de 3 parties différentes, 1h30</span></a>
+        <a class="primary" href="#essentiel"><strong>Réponses types</strong><span>Les ${OFFICIELS.length} sujets qui peuvent tomber, rédigés</span></a>
+        <a href="#sujets"><strong>M'entraîner sur un sujet</strong><span>${done}/${OFFICIELS.length} sujets déjà travaillés</span></a>
+        <a href="#cartes"><strong>Réviser les cartes</strong><span>${plural(due, "carte à revoir", "cartes à revoir")}</span></a>
       </section>
 
       <section class="stack">
@@ -230,17 +230,23 @@
         <h1>Sujets d'exam</h1>
         <p class="lead">Les ${OFFICIELS.length} sujets de contrôle donnés à la fin de chaque partie du cours. Rédige, puis compare avec le corrigé et coche ce que tu as mis : le pourcentage indique ta couverture des points clés.</p>
       </header>
-      <div class="row"><a class="btn" href="#examen">Examen blanc (3 sujets, 1h30)</a><a class="btn btn-quiet" href="#sujet-${shuffle(OFFICIELS)[0].id}">Sujet au hasard</a></div>
+      <div class="row"><a class="btn" href="#essentiel">Lire les réponses types</a><a class="btn btn-quiet" href="#examen">Examen blanc (1h30)</a><a class="btn btn-quiet" href="#sujet-${shuffle(OFFICIELS)[0].id}">Sujet au hasard</a></div>
       ${PARTS_SUJETS.map((pid) => group(pid, SUJETS.filter((s) => s.partie === pid && s.officiel), `${partLabel(pid)} · ${esc(P[pid].titre)}`)).join("")}
       ${group("intro", SUJETS.filter((s) => !s.officiel), "Sujets transversaux (bonus)")}
     `;
   }
+
+  const reponseHTML = (s) => {
+    const rep = D.reponses && D.reponses[s.id];
+    return rep ? `<div class="stack"><h2>Réponse type à retenir</h2><div class="reponse">${fmt(rep[0])}${src(rep[1])}</div></div>` : "";
+  };
 
   function corrigeHTML(s, open) {
     const r = sj(s.id);
     const n = r.checked.length, tot = s.points.length;
     return `
       <section class="corrige" id="corrige-${s.id}" ${open ? "" : "hidden"}>
+        ${reponseHTML(s)}
         <div class="stack">
           <h2>Plan type</h2>
           <ol class="plan-type">${s.plan.map((p) => `<li>${fmt(p)}</li>`).join("")}</ol>
@@ -287,6 +293,37 @@
         ${next ? `<a class="btn btn-quiet btn-small" href="#sujet-${next.id}">Sujet suivant →</a>` : ""}
       </nav>
     `;
+  }
+
+  /* ================================================================ */
+  /* RÉPONSES TYPES                                                    */
+  /* ================================================================ */
+  const ES = { filtre: "all" };
+  function viewEssentiel() {
+    const groups = PARTS_SUJETS.concat("bonus");
+    const label = (g) => (g === "bonus" ? "Bonus" : partLabel(g));
+    const list = (g) => SUJETS.filter((s) => (g === "bonus" ? !s.officiel : s.officiel && s.partie === g));
+    const shown = ES.filtre === "all" ? groups : [ES.filtre];
+    view.innerHTML = `
+      <header class="page-head">
+        <p class="eyebrow">À lire avant l'exam</p>
+        <h1>Réponses types</h1>
+        <p class="lead">Une réponse rédigée pour chacun des ${OFFICIELS.length} sujets de contrôle, uniquement avec le contenu du cours. Lis-les, puis essaie de les réécrire de mémoire dans la page Sujets.</p>
+      </header>
+      <div class="chips" role="group" aria-label="Choisir une partie">
+        <button data-act="ess-filter" data-f="all" aria-pressed="${ES.filtre === "all"}">Toutes</button>
+        ${groups.map((g) => `<button data-act="ess-filter" data-f="${g}" aria-pressed="${ES.filtre === g}">${label(g)}</button>`).join("")}
+      </div>
+      ${shown.map((g) => `
+        <section class="stack">
+          <h2>${g === "bonus" ? "Sujets transversaux (bonus)" : `${partLabel(g)} · ${esc(P[g].titre)}`}</h2>
+          ${list(g).map((s) => `<article class="fiche ${pc(s.partie)}">
+            <div class="row"><span class="sujet-num">${numSujet(s)}</span>${scoreTag(sujetScore(s.id))}</div>
+            <h3>${fmt(s.q)}</h3>
+            <div class="reponse">${fmt(D.reponses[s.id][0])}${src(D.reponses[s.id][1])}</div>
+            <a class="btn btn-quiet btn-small" href="#sujet-${s.id}">M'entraîner sur ce sujet</a>
+          </article>`).join("")}
+        </section>`).join("")}`;
   }
 
   /* ================================================================ */
@@ -616,6 +653,7 @@
     view.innerHTML = `
       <header class="page-head"><h1>Plus d'outils</h1></header>
       <div class="tiles">
+        <a href="#essentiel"><strong>Réponses types</strong><span>Les sujets qui peuvent tomber, rédigés</span></a>
         <a href="#examen"><strong>Examen blanc</strong><span>3 sujets, 1h30</span></a>
         <a href="#quiz"><strong>Quiz</strong><span>${D.quiz.length} QCM expliqués</span></a>
         <a href="#paires"><strong>Auteurs et notions</strong><span>Jeu d'association</span></a>
@@ -690,6 +728,7 @@
       case "rate": rateCard(+b.dataset.v); break;
       case "fiche-part": FS.partie = b.dataset.p; FS.q = ""; viewFiches(); break;
       case "read": S.fiches[b.dataset.k] = !S.fiches[b.dataset.k]; persist("fiches"); renderFicheBody(); break;
+      case "ess-filter": ES.filtre = b.dataset.f; viewEssentiel(); break;
       case "quiz-filter": QS.filtre = b.dataset.f; viewQuiz(); break;
       case "quiz-setup": QS.phase = "setup"; viewQuiz(); break;
       case "quiz-start": {

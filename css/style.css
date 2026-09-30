@@ -269,6 +269,9 @@ button, input, textarea { font: inherit; color: inherit; }
 .cov .meter { flex: 1 1 10rem; height: 8px; --pc: var(--ok); }
 .pager { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
 
+.reponse { max-width: 68ch; line-height: 1.65; }
+.reponse strong { color: var(--pc, var(--accent)); }
+
 /* ---------- Flashcards ---------- */
 .deck { display: grid; gap: 14px; }
 .deck-meta { display: flex; justify-content: space-between; gap: 10px; font-family: var(--f-mono); font-size: var(--t-xs); color: var(--muted); }
